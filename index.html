@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Programming Pathshala</title>
+  <style>
+
+    /* ── RESET ── */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1c1c2e;
+      color: white;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      background-color: white;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .logo {
+      font-size: 16px;
+      font-weight: bold;
+      color: #1c1c2e;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul a {
+      text-decoration: none;
+      color: #333;
+      font-size: 13px;
+    }
+
+    nav ul a:hover {
+      color: #2563eb;
+    }
+
+    nav .nav-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    nav .btn-login {
+      background: none;
+      border: none;
+      font-size: 13px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #1c1c2e;
+    }
+
+    nav .btn-start {
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    nav .btn-start:hover {
+      background-color: #1d4ed8;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      text-align: center;
+      padding: 60px 40px;
+      background-color: #1c1c2e;
+    }
+
+    .hero h1 {
+      font-size: 34px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      color: #9999bb;
+      font-size: 14px;
+      margin-bottom: 40px;
+    }
+
+    /* ── 3 COLUMN LAYOUT ── */
+    .hero-grid {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* ── PHOTO MOSAIC ── */
+    .mosaic {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      width: 240px;
+    }
+
+    .photo-box {
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      color: rgba(255,255,255,0.2);
+    }
+
+    .h1 { height: 80px;  background-color: #1e3358; }
+    .h2 { height: 130px; background-color: #16213e; }
+    .h3 { height: 130px; background-color: #1a2f1a; }
+    .h4 { height: 100px; background-color: #2d1b1b; }
+    .h5 { height: 85px;  background-color: #111827; }
+    .h6 { height: 80px;  background-color: #231f3a; }
+
+    /* ── JOIN FORM ── */
+    .join-card {
+      background-color: #23233c;
+      border-radius: 12px;
+      padding: 24px 20px;
+      width: 320px;
+    }
+
+    .join-card h2 {
+      text-align: center;
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+
+    .join-card input {
+      width: 100%;
+      background: transparent;
+      border: 1.5px solid #3a3a5c;
+      border-radius: 8px;
+      color: white;
+      padding: 10px 12px;
+      font-size: 13px;
+      margin-bottom: 10px;
+      outline: none;
+    }
+
+    .join-card input::placeholder {
+      color: #55557a;
+    }
+
+    .join-card input:focus {
+      border-color: #2563eb;
+    }
+
+    .phone-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .phone-row .flag {
+      border: 1.5px solid #3a3a5c;
+      border-radius: 8px;
+      padding: 10px 10px;
+      font-size: 13px;
+      color: white;
+      white-space: nowrap;
+    }
+
+    .phone-row input {
+      flex: 1;
+      margin-bottom: 0;
+    }
+
+    .join-card .btn-join {
+      width: 100%;
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 4px;
+    }
+
+    .join-card .btn-join:hover {
+      background-color: #1d4ed8;
+    }
+
+    .join-card .note {
+      text-align: center;
+      color: #55557a;
+      font-size: 11px;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    /* ── SECTION: WHAT IS CODE EVERYDAY ── */
+    .section {
+      padding: 60px 40px;
+      background-color: #111120;
+    }
+
+    .section-alt {
+      padding: 60px 40px;
+      background-color: #1c1c2e;
+    }
+
+    .section h2,
+    .section-alt h2 {
+      text-align: center;
+      font-size: 22px;
+      margin-bottom: 40px;
+    }
+
+    .two-col {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+        max-width: 800px;
+        margin: 0 auto;
+}
+
+    /* simple person illustration using divs */
+    .person-illus {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      flex-shrink: 0;
+    }
+
+    .person-illus .head {
+      width: 40px;
+      height: 40px;
+      background-color: #fbbf24;
+      border-radius: 50%;
+    }
+
+    .person-illus .body {
+      width: 60px;
+      height: 50px;
+      background-color: #4ade80;
+      border-radius: 6px 6px 0 0;
+    }
+
+    .person-illus .laptop {
+      width: 90px;
+      height: 12px;
+      background-color: #5b21b6;
+      border-radius: 4px;
+    }
+
+    .person-illus .laptop-base {
+      width: 100px;
+      height: 6px;
+      background-color: #7c3aed;
+      border-radius: 0 0 4px 4px;
+    }
+
+    .feature-list {
+      list-style: none;
+    }
+
+    .feature-list li {
+      font-size: 14px;
+      color: #ccccdd;
+      margin-bottom: 16px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      line-height: 1.5;
+    }
+
+    /* ── SECTION: WHY CONSISTENCY ── */
+    /* simple bar chart using divs */
+    .bar-chart {
+      background-color: #23233c;
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+      height: 160px;
+      flex-shrink: 0;
+    }
+
+    .bar {
+      width: 30px;
+      border-radius: 4px 4px 0 0;
+      background-color: #2563eb;
+    }
+
+    .bar.highlight {
+      background-color: #f59e0b;
+    }
+
+    .numbered-list {
+      list-style: none;
+      counter-reset: num;
+    }
+
+    .numbered-list li {
+      counter-increment: num;
+      font-size: 14px;
+      color: #ccccdd;
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+
+    .numbered-list li::before {
+      content: counter(num) ". ";
+      font-weight: bold;
+      color: white;
+    }
+
+    .achieve-text {
+      color: #2563eb;
+      font-size: 14px;
+      font-weight: bold;
+      margin-top: 16px;
+    }
+
+    /* ── SECTION: REFER AND EARN ── */
+    .refer-section {
+      padding: 60px 40px;
+      background-color: #111120;
+    }
+
+    .refer-inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .refer-icons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .icon-circle {
+      width: 55px;
+      height: 55px;
+      background-color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    .icon-big {
+      width: 65px;
+      height: 65px;
+      font-size: 26px;
+      grid-column: span 2;
+      margin: 0 auto;
+    }
+
+    .refer-text h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .refer-text p {
+      color: #9999bb;
+      font-size: 13px;
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .btn-refer {
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn-refer:hover {
+      background-color: #1d4ed8;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background-color: #0d0d1a;
+      padding: 50px 40px 24px;
+    }
+
+    .footer-cols {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr 1fr;
+      gap: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #1e1e32;
+    }
+
+    .footer-col h4 {
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #555577;
+      margin-bottom: 14px;
+    }
+
+    .footer-col a {
+      display: block;
+      color: #9898bc;
+      text-decoration: none;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .footer-col a:hover {
+      color: white;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .social-links a {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: #1c1c30;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #bbb;
+      font-size: 12px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      background-color: #2563eb;
+      color: white;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      color: #3a3a58;
+      font-size: 12px;
+      padding-top: 20px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+  <div class="logo">
+    <img src="logo.png" alt="Logo" height="30"/>Programming Pathshala</div>
+
+      <ul>
+      <li><a href="#">Explore Courses</a></li>
+      <li><a href="#">Success Stories</a></li>
+      <li><a href="#">Hire From Us</a></li>
+      <li><a href="#">Campus Program</a></li>
+      <li><a href="#">Blogs</a></li>
+      <li><a href="#">Events</a></li>
+    </ul>
+    <div class="nav-buttons">
+      <button class="btn-login">Log In</button>
+      <button class="btn-start">Start Free Trial</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Join the Community. Code Everyday.</h1>
+    <p>Consistency is what makes your perfect. Solve Problems everyday with us by joining the Community.</p>
+
+    <div class="hero-grid">
+
+      <!-- Left Photos -->
+      <div class="mosaic">
+        <div class="photo-box h1">💎</div>
+        <div class="photo-box h2">📸</div>
+        <div class="photo-box h3">👥</div>
+        <div class="photo-box h4">🎤</div>
+        <div class="photo-box h5">⚙️</div>
+        <div class="photo-box h6">🏅</div>
+      </div>
+
+      <!-- Join Form -->
+      <div class="join-card">
+        <h2>Join Now</h2>
+        <input type="text" placeholder="Full Name"/>
+        <input type="email" placeholder="Email"/>
+        <div class="phone-row">
+          <div class="flag">🇮🇳 +91</div>
+          <input type="tel" placeholder="WhatsApp Number"/>
+        </div>
+        <input type="text" placeholder="Referral Code (if any)"/>
+        <button class="btn-join">Join Community for Free</button>
+        <p class="note">We will send you the link via Email and WhatsApp.<br>We have a No Spam Policy.</p>
+      </div>
+
+      <!-- Right Photos -->
+      <div class="mosaic">
+        <div class="photo-box h2">🏆</div>
+        <div class="photo-box h1">👨‍💻</div>
+        <div class="photo-box h4">🤝</div>
+        <div class="photo-box h3">🎓</div>
+        <div class="photo-box h5">💡</div>
+        <div class="photo-box h6">🐍</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHAT IS CODE EVERYDAY -->
+  <section class="section">
+    <h2>What is Code Everyday?</h2>
+    <div class="two-col">
+
+      <!-- Simple Person Illustration -->
+      <div class="person-illus">
+        <div class="head"></div>
+        <div class="body"></div>
+        <div class="laptop"></div>
+        <div class="laptop-base"></div>
+      </div>
+
+      <!-- Feature List -->
+      <ul class="feature-list">
+        <li>🌿 Solve coding problems together live on YouTube.</li>
+        <li>💛 Join Community-Only Free Events and Courses.</li>
+        <li>🤝 Get mentored and grow in your tech career.</li>
+        <li>💬 Take part in dynamic and insightful discussions with peers.</li>
+      </ul>
+
+    </div>
+  </section>
+
+  <!-- WHY CONSISTENCY MATTERS -->
+  <section class="section-alt">
+    <h2>Why Consistency Matters</h2>
+    <div class="two-col">
+
+      <!-- Numbered List -->
+      <div>
+        <ol class="numbered-list">
+          <li>Master your skills.</li>
+          <li>Boost problem solving speed and efficiency.</li>
+          <li>Remain up-to-date with the latest tools and knowledge.</li>
+          <li>Build confidence in your Software Engineering abilities.</li>
+        </ol>
+        <p class="achieve-text">And we help you achieve that! 🏆</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- REFER AND EARN -->
+  <section class="refer-section">
+    <div class="refer-inner">
+
+      <!-- Icons -->
+      <div class="refer-icons">
+        <div class="icon-circle">👕</div>
+        <div class="icon-circle">📱</div>
+        <div class="icon-circle icon-big">🎁</div>
+        <div class="icon-circle">💻</div>
+        <div class="icon-circle">🎧</div>
+      </div>
+
+      <!-- Text -->
+      <div class="refer-text">
+        <h2>Refer and Earn</h2>
+        <p>Share your unique referral code with your friends, family, or anyone in your network and win exclusive rewards and goodies.</p>
+        <button class="btn-refer">Refer Now</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-cols">
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">About Us</a>
+        <a href="#">Success Stories</a>
+        <a href="#">Blogs</a>
+        <a href="#">Events</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Courses</h4>
+        <a href="#">Renaissance for Top Tech Companies</a>
+        <a href="#">Low Level Design and Concurrency</a>
+        <a href="#">Crash Course in Data Structures & Algorithms</a>
+        <a href="#">Backend Development with Java Spring Boot</a>
+        <a href="#">Begin with Programming in C++</a>
+        <a href="#">Become a Python Expert</a>
+        <a href="#">System Design for professionals</a>
+        <a href="#">Be a Data Engineer</a>
+        <a href="#">Full Stack Development in MERN</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#">Get Scholarship</a>
+        <a href="#">Teach with us</a>
+        <a href="#">Join Our Community</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Privacy Policy</h4>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Refund Policy</a>
+        <div class="social-links">
+          <a href="#">f</a>
+          <a href="#">▶</a>
+          <a href="#">in</a>
+          <a href="#">✈</a>
+          <a href="#">ig</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer-bottom">All Right Reserved with @Programming Pathshala</div>
+  </footer>
+
+</body>
+</html>
