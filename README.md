@@ -18,8 +18,3 @@ A sleek, responsive landing page designed to encourage developers to join a codi
     - **Flexbox & Grid:** For the 3-column hero layout and photo mosaics.
     - **Custom Illustrations:** Pure CSS-based person and laptop graphics.
     - **Animations:** Hover effects on buttons and navigation links.
-
-## 📂 Project Structure
-```text
-├── index.html   # Main page content and internal CSS
-└── logo.png     # Brand logo (ensure this is in your root folder)
